@@ -28,4 +28,12 @@ lsp.preset({
 -- (Optional) Configure lua language server for neovim
 require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
 
+local cmp = require('cmp')
+cmp.setup({
+  mapping = cmp.mapping.preset.insert({
+    ['<C-a>'] = cmp.mapping.confirm({select=true}),
+    ['<C-Space>'] = cmp.mapping.complete(),
+  })
+})
+
 lsp.setup()
