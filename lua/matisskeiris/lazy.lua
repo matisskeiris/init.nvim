@@ -18,7 +18,8 @@ require("lazy").setup({
 	},
     { "rebelot/kanagawa.nvim" },
 	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
-	{
+    { 'akinsho/toggleterm.nvim', version = "*", config = true },
+    {
 		'VonHeikemen/lsp-zero.nvim',
 		branch = 'v2.x',
 		dependencies = {
