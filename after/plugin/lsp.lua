@@ -13,7 +13,10 @@ lsp.ensure_installed({
 lsp.configure('csharp_ls', {
     handlers = {
         ["textDocument/definition"] = require('csharpls_extended').handler,
-    }
+    },
+    on_attach = function(client, bufnr)
+        require('lsp_signature').on_attach({ bind=true }, bufnr)
+    end
 })
 
 lsp.preset({

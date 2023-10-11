@@ -36,5 +36,6 @@ require("lazy").setup({
             -- CSharp-language-server
             {'Decodetalkers/csharpls-extended-lsp.nvim'}
 		}
-	}
+	},
+    { "ray-x/lsp_signature.nvim" }
 })
