@@ -17,7 +17,8 @@ require("lazy").setup({
 		dependencies = { 'nvim-lua/plenary.nvim' }
 	},
     { "rebelot/kanagawa.nvim" },
-	{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+    { "ellisonleao/gruvbox.nvim" },
+    { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
     { 'akinsho/toggleterm.nvim', version = "*", config = true },
     {
 		'VonHeikemen/lsp-zero.nvim',

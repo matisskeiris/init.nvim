@@ -6,10 +6,6 @@ lsp.on_attach(function(client, bufnr)
     lsp.default_keymaps({buffer = bufnr})
 end)
 
-lsp.ensure_installed({
-    "csharp_ls"
-})
-
 lsp.configure('csharp_ls', {
     handlers = {
         ["textDocument/definition"] = require('csharpls_extended').handler,
@@ -27,9 +23,8 @@ lsp.preset({
     suggest_lsp_servers = false,
 })
 
-
--- (Optional) Configure lua language server for neovim
 require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
+require('lspconfig').qmlls.setup({})
 
 local cmp = require('cmp')
 cmp.setup({
@@ -38,5 +33,7 @@ cmp.setup({
     ['<C-Space>'] = cmp.mapping.complete(),
   })
 })
+
+vim.keymap.set('n', '<leader>hh', ":ClangdSwitchSourceHeader<CR>")
 
 lsp.setup()
